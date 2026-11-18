@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# build.sh — builds the release `demix` binary into
-# library next to it (PDF input).
+# build.sh — builds the release `demix` binary into build/
 # (Linux, macOS, Windows through Git Bash/MSYS2; x86_64 or aarch64).
 #
 #   ./build.sh            CPU
@@ -38,6 +37,5 @@ ARCH=$(uname -m); [ "$ARCH" = arm64 ] && ARCH=aarch64
 mkdir -p build
 OUT="build/demix-$OS-$ARCH-$SUFFIX-$VERSION$EXE"
 cp "$TARGET_DIR/release/demix$EXE" "$OUT"
-fi
 "$OUT" --version
 echo "artifact: $OUT"
